@@ -13,8 +13,8 @@ public class FollowCamera : MonoBehaviour {
 	void Update () {
 		Vector3 newPosition = player.position + offset;
 
-		transform.position = Vector3.Lerp (transform.position, newPosition, cameraFollowSpeed * Time.deltaTime);
-
+		//transform.position = Vector3.Lerp (transform.position, newPosition, cameraFollowSpeed * Time.deltaTime);
+		transform.position = newPosition;
 	
 	}
 }
