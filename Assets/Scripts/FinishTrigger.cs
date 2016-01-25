@@ -3,18 +3,19 @@ using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class DeathTrigger : MonoBehaviour {
+public class FinishTrigger : MonoBehaviour {
 
-	public static bool alive;
+	public static bool finish;
 
 	// Use this for initialization
 	void Start () {
-		alive = true;
+		finish = false;
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.CompareTag ("Player")) {
-			alive = false;
+			finish = true;
+			Debug.Log ("GameFinished");
 		}
 	}
 }
