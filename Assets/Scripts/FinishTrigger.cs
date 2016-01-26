@@ -12,7 +12,7 @@ public class FinishTrigger : MonoBehaviour {
 		finish = false;
 	}
 
-	void OnTriggerEnter2D(Collider2D other) {
+	void OnCollisionEnter2D(Collision2D other) {
 		if (other.gameObject.CompareTag ("Player")) {
 			finish = true;
 			Debug.Log ("GameFinished");

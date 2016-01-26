@@ -85,9 +85,15 @@ public class GameState : MonoBehaviour {
 		Cursor.visible = true;
 
 		gameStarted = false;
+		if(FinishTrigger.finish == true){
+			gameStateText.text = "Congrats!\nYou won.";
+			gameStateText.color = Color.white;
+		}
+		else{
+			gameStateText.text = "Game over!\nYou lost.";
+			gameStateText.color = Color.white;
+		}
 
-		gameStateText.text = "Game over!\nYou lost.";
-		gameStateText.color = Color.white;
 
 //		player.SetActive (false);
 	}
