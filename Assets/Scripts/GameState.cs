@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameState : MonoBehaviour {
 
 
-	private bool gameStarted = false;
+	public bool gameStarted = false;
 	[SerializeField]
 	private Text gameStateText;
 //	[SerializeField]
