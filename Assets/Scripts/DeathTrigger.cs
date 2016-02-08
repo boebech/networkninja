@@ -17,4 +17,5 @@ public class DeathTrigger : MonoBehaviour {
 			alive = false;
 		}
 	}
+		
 }

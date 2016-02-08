@@ -19,6 +19,7 @@ public class GameState : MonoBehaviour {
 	private float restartTimer;
 //	private PlayerMovement playerMovement;
 //	private PlayerHealth playerHealth;
+	private int i = 0; // count value to ensure that EndGame() is called only once
 
 	// Use this for initialization
 	void Start () {
@@ -45,16 +46,19 @@ public class GameState : MonoBehaviour {
 		}
 
 		if(DeathTrigger.alive == false || FinishTrigger.finish == true){
-			EndGame();
+			if (i == 0) EndGame ();
+			i++;
 
 			// increment a timer to count up to restarting
 			restartTimer = restartTimer + Time.deltaTime;
 
 			if(restartTimer >= restartDelay){
 
+				//reset counter so that EndGame() can be called again
+				i = 0; 
+
 				//...reload the currently loaded level.
 				SceneManager.LoadScene("scene0");
-
 
 			}
 		}
@@ -65,7 +69,7 @@ public class GameState : MonoBehaviour {
 
 
 
-		Cursor.visible = false;
+		//Cursor.visible = false;
 
 		gameStarted = true;
 
@@ -80,22 +84,28 @@ public class GameState : MonoBehaviour {
 
 	}
 
+	// called only once to make sure the highscore is displayed properly
 	private void EndGame(){
+		string endText = "";
 
 		Cursor.visible = true;
 
 		gameStarted = false;
-		if(FinishTrigger.finish == true){
-			gameStateText.text = "Congrats!\nYou won.";
-			gameStateText.color = Color.white;
-		}
-		else{
-			gameStateText.text = "Game over!\nYou lost.";
-			gameStateText.color = Color.white;
+		if (FinishTrigger.finish == true)
+			endText = "Congrats!\nYou won.";
+		else
+			endText = "Game over!\nYou lost.";
+
+		if (ScoreManager.isHighScore (CoinCount.coinCount)) {
+			endText = endText + "\nNew Highscore: " + CoinCount.coinCount;
+			ScoreManager.saveHighScore (CoinCount.coinCount);
 		}
 
+		gameStateText.text = endText;
+		gameStateText.color = Color.white;
 
 //		player.SetActive (false);
 	}
+		
 
 }
