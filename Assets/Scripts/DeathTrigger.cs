@@ -12,6 +12,13 @@ public class DeathTrigger : MonoBehaviour {
 		alive = true;
 	}
 
+	void Update() {
+		//if timerMode is Countdown and 0 is reached the player is killed manually and the game is ended
+		if (GameTimer.getTimerMode() == 1 && GameTimer.getTimer() == 0) {
+			DeathTrigger.alive = false;
+		}
+	}
+
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.CompareTag ("Player")) {
 			alive = false;

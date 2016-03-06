@@ -62,7 +62,7 @@ public class GameState : MonoBehaviour {
 
 			}
 		}
-
+			
 	}
 
 	private void StartGame(){
@@ -103,6 +103,8 @@ public class GameState : MonoBehaviour {
 
 		gameStateText.text = endText;
 		gameStateText.color = Color.white;
+
+		//Time.timeScale = 0.0f; //freeze entire game (including update functions)
 
 //		player.SetActive (false);
 	}
