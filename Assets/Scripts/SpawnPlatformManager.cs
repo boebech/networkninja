@@ -3,7 +3,7 @@ using System.Collections;
 
 public class SpawnPlatformManager : MonoBehaviour {
 
-	public int maxPlatforms = 20;
+	public int maxPlatforms = 5;
 	public GameObject platform;
 	public GameObject platformWin;
 	public float horizontalMin = 6.5f;

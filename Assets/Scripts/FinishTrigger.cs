@@ -13,9 +13,22 @@ public class FinishTrigger : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D other) {
+
 		if (other.gameObject.CompareTag ("Player")) {
-			finish = true;
-			Debug.Log ("GameFinished");
+			switch(Application.loadedLevelName) {
+			case "scene0":
+				SceneManager.LoadScene ("scene1");
+				break;
+			case "scene1":
+				finish = true;
+				Debug.Log ("GameFinished");
+				break;
+			default:
+				Debug.Log ("default");
+				break;
+			}
 		}
+
 	}
+		
 }

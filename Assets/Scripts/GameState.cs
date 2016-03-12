@@ -58,7 +58,7 @@ public class GameState : MonoBehaviour {
 				i = 0; 
 
 				//...reload the currently loaded level.
-				SceneManager.LoadScene("scene0");
+				SceneManager.LoadScene("menuscene");
 
 			}
 		}

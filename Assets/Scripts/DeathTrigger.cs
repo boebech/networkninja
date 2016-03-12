@@ -24,5 +24,11 @@ public class DeathTrigger : MonoBehaviour {
 			alive = false;
 		}
 	}
+
+	void OnCollisionEnter2D(Collider2D other) {
+		if(other.gameObject.CompareTag("Player")) {
+			alive = false;
+		}
+	}
 		
 }

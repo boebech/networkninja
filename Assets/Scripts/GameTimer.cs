@@ -9,7 +9,7 @@ public class GameTimer : MonoBehaviour {
 	private static bool timeStarted = false;
 
 	public Text timerText;
-	private readonly float timerDuration = 10f;
+	private readonly float timerDuration = 100f;
 
 	// Use this for initialization
 	void Start () {
