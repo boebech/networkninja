@@ -17,11 +17,12 @@ public class FinishTrigger : MonoBehaviour {
 		if (other.gameObject.CompareTag ("Player")) {
 			switch(Application.loadedLevelName) {
 			case "scene0":
+				setLevelPrefs (0);
 				SceneManager.LoadScene ("scene1");
 				break;
 			case "scene1":
+				setLevelPrefs (1);
 				finish = true;
-				Debug.Log ("GameFinished");
 				break;
 			default:
 				Debug.Log ("default");
@@ -29,6 +30,13 @@ public class FinishTrigger : MonoBehaviour {
 			}
 		}
 
+	}
+
+
+	void setLevelPrefs(int recentlyFinishedLevel) {
+		int highestLevelAchieved = PlayerPrefs.GetInt("LevelAchieved", 0);
+		if (recentlyFinishedLevel > highestLevelAchieved)
+			PlayerPrefs.SetInt ("LevelAchieved", recentlyFinishedLevel);
 	}
 		
 }

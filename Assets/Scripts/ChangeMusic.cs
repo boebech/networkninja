@@ -13,7 +13,7 @@ public class ChangeMusic : MonoBehaviour {
 	}
 
 	void OnLevelWasLoaded (int level){
-		if(level == 1 && wasRunningBefore==false){
+		if(level == 1 /*&& wasRunningBefore==false*/){
 			source.clip = level1Music;
 			source.Play ();
 			wasRunningBefore=true;

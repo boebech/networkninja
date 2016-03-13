@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameTimer : MonoBehaviour {
 
@@ -9,10 +10,11 @@ public class GameTimer : MonoBehaviour {
 	private static bool timeStarted = false;
 
 	public Text timerText;
-	private readonly float timerDuration = 100f;
+	private float timerDuration = 100f;
 
 	// Use this for initialization
 	void Start () {
+		setTimerDuration ();
 		if (timerMode == 1)
 			timer = timerDuration;
 		else
@@ -49,6 +51,13 @@ public class GameTimer : MonoBehaviour {
 
 	public static float getTimerMode() {
 		return timerMode;
+	}
+
+	private void setTimerDuration() {
+		if (Application.loadedLevelName.Equals("scene0"))
+			timerDuration = 30f;
+		if (Application.loadedLevelName.Equals("scene1"))
+			timerDuration = 60f;
 	}
 		
 }

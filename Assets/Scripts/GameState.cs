@@ -101,6 +101,12 @@ public class GameState : MonoBehaviour {
 			ScoreManager.saveHighScore (CoinCount.coinCount);
 		}
 
+		//end currently playing track since it will overlap with the menu-music 
+		GameObject[] destroyable = GameObject.FindGameObjectsWithTag ("destroyable");
+		foreach(GameObject go in destroyable) {
+			Destroy (go);
+		}
+
 		gameStateText.text = endText;
 		gameStateText.color = Color.white;
 

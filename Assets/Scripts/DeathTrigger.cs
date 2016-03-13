@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class DeathTrigger : MonoBehaviour {
 
+	private AudioSource source;
+	public AudioClip spikeSound;
 	public static bool alive;
 
 	// Use this for initialization
@@ -25,10 +27,12 @@ public class DeathTrigger : MonoBehaviour {
 		}
 	}
 
-	void OnCollisionEnter2D(Collider2D other) {
-		if(other.gameObject.CompareTag("Player")) {
+	void OnCollisionEnter2D(Collision2D other) {
+		if (other.gameObject.CompareTag ("Player")) {
 			alive = false;
+			AudioSource.PlayClipAtPoint(spikeSound, transform.position); //source.clip = coinSound; source.Play(); not working?!
 		}
 	}
+
 		
 }
