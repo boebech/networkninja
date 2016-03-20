@@ -5,7 +5,7 @@ public class ScoreManager : MonoBehaviour {
 
 	//check if the transferred value is higher than the saved PlayerPref
 	public static bool isHighScore(int count) {
-		PlayerPrefs.DeleteAll (); //reset highscore for testing purposes, usually commented out!
+		//PlayerPrefs.DeleteAll (); //reset highscore for testing purposes, usually commented out!
 
 		if (count > PlayerPrefs.GetInt ("CoinCount", 0)) {
 			return true;

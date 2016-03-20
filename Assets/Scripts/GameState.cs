@@ -100,6 +100,7 @@ public class GameState : MonoBehaviour {
 			endText = endText + "\nNew Highscore: " + CoinCount.coinCount;
 			ScoreManager.saveHighScore (CoinCount.coinCount);
 		}
+		CoinCount.coinCount = 0; // reset counter (either after player died or finshed the game)
 
 		//end currently playing track since it will overlap with the menu-music 
 		GameObject[] destroyable = GameObject.FindGameObjectsWithTag ("destroyable");
@@ -107,12 +108,17 @@ public class GameState : MonoBehaviour {
 			Destroy (go);
 		}
 
-		gameStateText.text = endText;
-		gameStateText.color = Color.white;
+		PrintGameStateText (endText);
 
 		//Time.timeScale = 0.0f; //freeze entire game (including update functions)
 
 //		player.SetActive (false);
+	}
+
+
+	public void PrintGameStateText(string endText) {
+		gameStateText.text = endText;
+		gameStateText.color = Color.white;
 	}
 		
 

@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class FinishTrigger : MonoBehaviour {
 
 	public static bool finish;
+	[SerializeField] private Text gameStateText;
 
 	// Use this for initialization
 	void Start () {
@@ -15,7 +16,7 @@ public class FinishTrigger : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D other) {
 
 		if (other.gameObject.CompareTag ("Player")) {
-			switch(Application.loadedLevelName) {
+			switch(SceneManager.GetActiveScene ().name) {
 			case "scene0":
 				setLevelPrefs (0);
 				SceneManager.LoadScene ("scene1");
@@ -32,11 +33,11 @@ public class FinishTrigger : MonoBehaviour {
 
 	}
 
-
+	//save the highest level the player achieved (e.g. for display in the start menu)
 	void setLevelPrefs(int recentlyFinishedLevel) {
 		int highestLevelAchieved = PlayerPrefs.GetInt("LevelAchieved", 0);
 		if (recentlyFinishedLevel > highestLevelAchieved)
 			PlayerPrefs.SetInt ("LevelAchieved", recentlyFinishedLevel);
 	}
-		
+
 }
