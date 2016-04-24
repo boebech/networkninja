@@ -18,6 +18,7 @@ public class ReduceHealth : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.CompareTag ("Bullet")) {
+			Debug.Log ("Trigger");
 			reduceHealth ();
 			Destroy (other.gameObject);
 		}
@@ -26,6 +27,7 @@ public class ReduceHealth : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D other) {
 		if (other.gameObject.CompareTag ("Bullet")) {
+			Debug.Log ("Collision");
 			reduceHealth ();
 			Destroy (other.gameObject);
 		}
