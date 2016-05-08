@@ -48,8 +48,11 @@ public class Gun : MonoBehaviour
 		}
 
 		if (transform.tag == "Enemy") {
-			// If the fire button is pressed...
-			if (Input.GetButtonDown ("Fire1")) {
+
+			int randomize = Random.Range (0, 150); // max wird nicht beachtet, also 0-99
+
+			// 0.66% chance that enemy fires
+			if (randomize == 0) {
 				// ... set the animator Shoot trigger parameter and play the audioclip.
 				anim.SetTrigger ("Shoot");
 				AudioSource.PlayClipAtPoint (gunshot, transform.position); 
