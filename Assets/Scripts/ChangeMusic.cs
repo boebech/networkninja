@@ -5,6 +5,7 @@ public class ChangeMusic : MonoBehaviour {
 
 	private AudioSource source;
 	public AudioClip level1Music;
+	public AudioClip level2Music;
 	public static bool wasRunningBefore = false;
 
 	// Use this for initialization
@@ -16,7 +17,12 @@ public class ChangeMusic : MonoBehaviour {
 		if(level == 1 /*&& wasRunningBefore==false*/){
 			source.clip = level1Music;
 			source.Play ();
-			wasRunningBefore=true;
+			//wasRunningBefore=true;
+		}
+		if(level == 2 /*&& wasRunningBefore==false*/){
+			source.clip = level2Music;
+			source.Play ();
+			//wasRunningBefore=true;
 		}
 	}
 }

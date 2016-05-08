@@ -41,6 +41,7 @@ public class GameState : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+
 		if(gameStarted == false && Input.GetKeyUp(KeyCode.Space)){
 			StartGame();
 		}
@@ -57,7 +58,7 @@ public class GameState : MonoBehaviour {
 				//reset counter so that EndGame() can be called again
 				i = 0; 
 
-				//...reload the currently loaded level.
+				//...reload the menu scene loaded level.
 				SceneManager.LoadScene("menuscene");
 
 			}
