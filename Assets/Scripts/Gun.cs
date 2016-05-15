@@ -49,19 +49,28 @@ public class Gun : MonoBehaviour
 
 		if (transform.tag == "Enemy") {
 
-			int randomize = Random.Range (0, 150); // max wird nicht beachtet, also 0-99
+			int shootAtRandom = Random.Range (0, 150); 
+			int randomShotDirection = Random.Range (0, 2); //0=right, 1=left
+			float rocketFacingDirection = 0; //0 = right, 180f = left
+			float rocketFlyingDirection = speed; // separated variable that is reinitialized with every update call
 
-			// 0.66% chance that enemy fires
-			if (randomize == 0) {
-				// ... set the animator Shoot trigger parameter and play the audioclip.
+			// 0.66% chance that enemy fires for each frame
+			if (shootAtRandom == 0) {
+				// set the animator Shoot trigger parameter and play the audioclip.
 				anim.SetTrigger ("Shoot");
 				AudioSource.PlayClipAtPoint (gunshot, transform.position); 
 
 
 				Vector3 rocketLaunch = transform.position + new Vector3 (2, 2, 0);
 
-				Rigidbody2D bulletinstance = Instantiate (rocket, rocketLaunch, Quaternion.Euler (new Vector3 (0, 0, 0))) as Rigidbody2D;
-				bulletinstance.velocity = new Vector2 (speed, 0);
+				//if shot direction is determined as 1 (left) speed is inversed and rocket sprite is turned
+				if (randomShotDirection == 1) {
+					rocketFlyingDirection = -speed;
+					rocketFacingDirection = 180f;
+				} 
+
+				Rigidbody2D bulletinstance = Instantiate (rocket, rocketLaunch, Quaternion.Euler (new Vector3 (0, 0, rocketFacingDirection))) as Rigidbody2D;
+				bulletinstance.velocity = new Vector2 (rocketFlyingDirection, 0);
 
 			}
 
