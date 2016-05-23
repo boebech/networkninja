@@ -20,20 +20,30 @@ public class ReduceHealth : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
-		if (other.gameObject.CompareTag ("Bullet")) {
-			Debug.Log ("Trigger");
+		if (gameObject.CompareTag ("Player") && other.gameObject.CompareTag ("Bullet_Enemy")) {
 			reduceHealth ();
 			Destroy (other.gameObject);
-		}
-			
+		} else if (gameObject.CompareTag ("Enemy") && other.gameObject.CompareTag ("Bullet")) {
+			reduceHealth ();
+			Destroy (other.gameObject);
+		} else if (gameObject.CompareTag ("Wall") && other.gameObject.CompareTag ("Bullet")) {
+			reduceHealth ();
+			Destroy (other.gameObject);
+		} 
 	}
 
 	void OnCollisionEnter2D(Collision2D other) {
-		if (other.gameObject.CompareTag ("Bullet")) {
-			Debug.Log ("Collision");
+		if(gameObject.CompareTag("Player") && other.gameObject.CompareTag ("Bullet_Enemy")) {
 			reduceHealth ();
 			Destroy (other.gameObject);
 		}
+		if(gameObject.CompareTag("Enemy") && other.gameObject.CompareTag ("Bullet")) {
+			reduceHealth ();
+			Destroy (other.gameObject);
+		} else if (gameObject.CompareTag ("Wall") && other.gameObject.CompareTag ("Bullet")) {
+			reduceHealth ();
+			Destroy (other.gameObject);
+		} 		
 	}
 
 	private void reduceHealth() {
