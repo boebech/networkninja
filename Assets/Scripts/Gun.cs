@@ -29,7 +29,7 @@ public class Gun : MonoBehaviour
 			// If the fire button is pressed...
 			if (Input.GetButtonDown ("Fire1")) {
 				// ... set the animator Shoot trigger parameter and play the audioclip.
-				anim.SetTrigger ("Shoot");
+				//anim.SetTrigger ("Shoot");
 				AudioSource.PlayClipAtPoint (gunshot, transform.position); 
 
 
@@ -57,11 +57,11 @@ public class Gun : MonoBehaviour
 			// 0.66% chance that enemy fires for each frame
 			if (shootAtRandom == 0) {
 				// set the animator Shoot trigger parameter and play the audioclip.
-				anim.SetTrigger ("Shoot");
+				//anim.SetTrigger ("Shoot");
 				AudioSource.PlayClipAtPoint (gunshot, transform.position); 
 
 
-				Vector3 rocketLaunch = transform.position + new Vector3 (2, 2, 0);
+				Vector3 rocketLaunch = transform.position + new Vector3 (0, 1, 0);
 
 				//if shot direction is determined as 1 (left) speed is inversed and rocket sprite is turned
 				if (randomShotDirection == 1) {
