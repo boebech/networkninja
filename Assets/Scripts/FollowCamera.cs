@@ -9,7 +9,7 @@ public class FollowCamera : MonoBehaviour {
 	private Vector3 offset;
 	private float cameraFollowSpeed = 5f;
 
-	private float restartDelay = 5f;
+	private float restartDelay = 0.08f;
 	private float restartTimer;
 	
 	// Update is called once per frame
@@ -26,7 +26,10 @@ public class FollowCamera : MonoBehaviour {
 		if(restartTimer >= restartDelay){
 
 			//reset counter so that EndGame() can be called again
-			offset.z = offset.z - 7;
+			offset.z = offset.z - 0.02f;
+			//offset.x = offset.x - 0.03f;
+			//transform.RotateAround(player.position,new Vector3(0,1,0,50);
+
 			restartTimer = 0f;
 
 		}
