@@ -47,7 +47,10 @@ public class ReduceHealth : MonoBehaviour {
 	}
 
 	private void reduceHealth() {
-		health -= 34;
-		Debug.Log ("Health reduced, new HP: " + health);
+		if (gameObject.CompareTag ("Player")) {
+			health -= 20;
+			ShowPlayerHealth.hp -= 20;
+		} else
+			health -= 20;
 	}
 }

@@ -26,7 +26,7 @@ public class FollowCamera : MonoBehaviour {
 		if(restartTimer >= restartDelay){
 
 			//reset counter so that EndGame() can be called again
-			offset.z = offset.z - 0.02f;
+			//offset.z = offset.z - 0.02f;
 			//offset.x = offset.x - 0.03f;
 			//transform.RotateAround(player.position,new Vector3(0,1,0,50);
 

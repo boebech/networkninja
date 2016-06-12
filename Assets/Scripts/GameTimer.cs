@@ -54,9 +54,9 @@ public class GameTimer : MonoBehaviour {
 	}
 
 	private void setTimerDuration() {
-		if (Application.loadedLevelName.Equals("scene0"))
-			timerDuration = 30f;
 		if (Application.loadedLevelName.Equals("scene1"))
+			timerDuration = 30f;
+		if (Application.loadedLevelName.Equals("scene2"))
 			timerDuration = 60f;
 	}
 		
