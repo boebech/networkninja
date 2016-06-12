@@ -13,7 +13,7 @@ public class CoinCount : MonoBehaviour {
 	}
 
 	void Update() {
-		countText.text = "Coins: " + coinCount;
+		countText.text = "" + coinCount;
 	}
 
 

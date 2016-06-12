@@ -14,6 +14,7 @@ public class ShowPlayerHealth : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		hp = 100;
 	}
 	
 	// Update is called once per frame
