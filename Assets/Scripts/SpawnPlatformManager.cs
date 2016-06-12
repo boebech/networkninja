@@ -29,7 +29,6 @@ public class SpawnPlatformManager : MonoBehaviour {
 			lastBeforeLastPosition = randomPosition;
 		}
 
-		Debug.Log ("lastplatformspawned");
 		Vector2 winPos = lastBeforeLastPosition + new Vector2 (Random.Range (horizontalMin, horizontalMax), Random.Range (verticalMin, verticalMax));
 		Instantiate (platformWin, winPos, Quaternion.identity);
 

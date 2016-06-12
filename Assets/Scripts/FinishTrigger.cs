@@ -17,10 +17,6 @@ public class FinishTrigger : MonoBehaviour {
 
 		if (other.gameObject.CompareTag ("Player")) {
 			switch(SceneManager.GetActiveScene ().name) {
-			case "scene0":
-				setLevelPrefs (0);
-				SceneManager.LoadScene ("scene1");
-				break;
 			case "scene1":
 				setLevelPrefs (1);
 				SceneManager.LoadScene ("scene2");
@@ -30,7 +26,6 @@ public class FinishTrigger : MonoBehaviour {
 				finish = true;
 				break;
 			default:
-				Debug.Log ("default");
 				break;
 			}
 		}
