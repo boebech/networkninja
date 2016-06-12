@@ -13,9 +13,9 @@ public class ReduceHealth : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (health <= 0) {
-			Destroy (gameObject);
-			if (gameObject.CompareTag ("Player"))
-				DeathTrigger.alive = false;
+			if (gameObject.CompareTag ("Player")) {
+				if(ShowPlayerHealth.hp <= 0) DeathTrigger.alive = false;
+			} else Destroy (gameObject);
 		}
 	}
 
@@ -50,6 +50,7 @@ public class ReduceHealth : MonoBehaviour {
 		if (gameObject.CompareTag ("Player")) {
 			health -= 20;
 			ShowPlayerHealth.hp -= 20;
+			Debug.Log ("Health reduced: " + ShowPlayerHealth.hp);
 		} else
 			health -= 20;
 	}
