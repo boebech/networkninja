@@ -18,11 +18,11 @@ public class FinishTrigger : MonoBehaviour {
 		if (other.gameObject.CompareTag ("Player")) {
 			switch(SceneManager.GetActiveScene ().name) {
 			case "scene1":
-				setLevelPrefs (1);
+				setLevelPrefs (2);
 				SceneManager.LoadScene ("scene2");
 				break;
 			case "scene2":
-				setLevelPrefs (2);
+				setLevelPrefs (3);
 				finish = true;
 				break;
 			default:
