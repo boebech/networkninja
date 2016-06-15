@@ -7,6 +7,7 @@ public class DeathTrigger : MonoBehaviour {
 
 	private AudioSource source;
 	public AudioClip deathSound;
+	public AudioClip fallingSound;
 	public static bool alive;
 
 	// Use this for initialization
@@ -24,6 +25,7 @@ public class DeathTrigger : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.CompareTag ("Player")) {
 			killPlayer ();
+			AudioSource.PlayClipAtPoint(fallingSound, transform.position);
 		}
 	}
 

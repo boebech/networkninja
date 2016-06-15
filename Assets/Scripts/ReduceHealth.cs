@@ -4,6 +4,7 @@ using System.Collections;
 public class ReduceHealth : MonoBehaviour {
 
 	[SerializeField] private int health = 100; 
+	public AudioClip playerHitSound;
 
 
 	// Use this for initialization
@@ -48,10 +49,19 @@ public class ReduceHealth : MonoBehaviour {
 
 	private void reduceHealth() {
 		if (gameObject.CompareTag ("Player")) {
-			health -= 20;
-			ShowPlayerHealth.hp -= 20;
-			Debug.Log ("Health reduced: " + ShowPlayerHealth.hp);
+			reducePlayerHealth ();
 		} else
-			health -= 20;
+			reduceOtherHealth ();
+	}
+
+	private void reducePlayerHealth() {
+		health -= 20;
+		ShowPlayerHealth.hp -= 20;
+		AudioSource.PlayClipAtPoint(playerHitSound, transform.position);
+		//Debug.Log ("Health reduced: " + ShowPlayerHealth.hp);
+	}
+
+	private void reduceOtherHealth() {
+		health -= 20;
 	}
 }
