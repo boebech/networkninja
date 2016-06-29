@@ -8,7 +8,9 @@ public class PlatformMove : MonoBehaviour {
 	private Vector2 initialPlatformPos = new Vector2 (0,0);
 	private Vector2 platformPos = new Vector2 (0, 0);
 	private float upOrDown = 1;
+	private float leftOrRight = 1;
 	public float intervall = 6;
+	public bool moveHorizontal;
 
 	// Use this for initialization
 	void Start () {
@@ -21,16 +23,31 @@ public class PlatformMove : MonoBehaviour {
 
 	void Update () 
 	{
-		if (platformRigidbody.position.y > initialPlatformPos.y + (intervall/2)) {
-			upOrDown = -1;
-		}
-		if (platformRigidbody.position.y < initialPlatformPos.y - (intervall/2)) {
-			upOrDown = 1;
-		}
-		//float xPos = platformRigidbody.position.x + (Input.GetAxis("Horizontal") * playerSpeed);
-		float yPos = platformRigidbody.position.y + (0.2f * platformSpeed * upOrDown);
-		platformPos = new Vector2 (platformRigidbody.position.x,yPos);
-		platformRigidbody.position = platformPos;
+		if (moveHorizontal) {
 
+			if (platformRigidbody.position.x > initialPlatformPos.x + (intervall / 2)) {
+				leftOrRight = -1;
+			}
+			if (platformRigidbody.position.x < initialPlatformPos.x - (intervall / 2)) {
+				leftOrRight = 1;
+			}
+			//float xPos = platformRigidbody.position.x + (Input.GetAxis("Horizontal") * playerSpeed);
+			float xPos = platformRigidbody.position.x + (0.2f * platformSpeed * leftOrRight);
+			platformPos = new Vector2 (xPos,platformRigidbody.position.y);
+			platformRigidbody.position = platformPos;
+		}
+		else{
+
+			if (platformRigidbody.position.y > initialPlatformPos.y + (intervall / 2)) {
+				upOrDown = -1;
+			}
+			if (platformRigidbody.position.y < initialPlatformPos.y - (intervall / 2)) {
+				upOrDown = 1;
+			}
+			//float xPos = platformRigidbody.position.x + (Input.GetAxis("Horizontal") * playerSpeed);
+			float yPos = platformRigidbody.position.y + (0.2f * platformSpeed * upOrDown);
+			platformPos = new Vector2 (platformRigidbody.position.x, yPos);
+			platformRigidbody.position = platformPos;
+		}
 	}
 }
