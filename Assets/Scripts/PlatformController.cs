@@ -32,6 +32,8 @@ public class PlatformController : MonoBehaviour {
 
 	void FixedUpdate() {
 		if(DeathTrigger.alive) { // freeze player when dead (TODO:optimize)
+			//BackgroundScroller bgs = GetComponent<BackgroundScroller> ();
+			//bgs.moveScreen ();
 			float h = Input.GetAxis ("Horizontal");
 
 			anim.SetFloat ("Speed", Mathf.Abs (h));

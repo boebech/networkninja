@@ -14,6 +14,7 @@ public class GameTimer : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		timerText.color = Color.black;
 		setTimerDuration ();
 		if (timerMode == 1)
 			timer = timerDuration;

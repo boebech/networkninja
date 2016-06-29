@@ -9,6 +9,7 @@ public class CoinCount : MonoBehaviour {
 
 
 	void Start() {
+		countText.color = Color.black;
 		//coinCount = 0; //reset coincount with each new start of a level
 	}
 
