@@ -9,6 +9,8 @@ public class DeathTrigger : MonoBehaviour {
 	public AudioClip deathSound;
 	public AudioClip fallingSound;
 	public static bool alive;
+	[SerializeField]
+	private GameObject playerParticle;
 
 	// Use this for initialization
 	void Start () {
@@ -26,6 +28,7 @@ public class DeathTrigger : MonoBehaviour {
 		if (other.gameObject.CompareTag ("Player")) {
 			killPlayer ();
 			AudioSource.PlayClipAtPoint(fallingSound, transform.position);
+
 		}
 	}
 
@@ -33,6 +36,7 @@ public class DeathTrigger : MonoBehaviour {
 		if (other.gameObject.CompareTag ("Player")) {
 			killPlayer ();
 			AudioSource.PlayClipAtPoint(deathSound, transform.position); //source.clip = coinSound; source.Play(); not working?!
+
 		}
 	}
 

@@ -15,6 +15,9 @@ public class PlatformController : MonoBehaviour {
 	private Animator anim;
 	private Rigidbody2D rb2d;
 
+	public GameObject playerParticle;
+	private bool particlesCreated = false;
+
 	// Use this for initialization
 	void Awake () {
 		anim = GetComponent<Animator> ();
@@ -31,7 +34,7 @@ public class PlatformController : MonoBehaviour {
 	}
 
 	void FixedUpdate() {
-		if(DeathTrigger.alive) { // freeze player when dead (TODO:optimize)
+		if (DeathTrigger.alive) { // freeze player when dead (TODO:optimize)
 			//BackgroundScroller bgs = GetComponent<BackgroundScroller> ();
 			//bgs.moveScreen ();
 			float h = Input.GetAxis ("Horizontal");
@@ -49,11 +52,20 @@ public class PlatformController : MonoBehaviour {
 			else if (h < 0 && facingRight)
 				Flip ();
 
-			if(jump) {
+			if (jump) {
 				anim.SetTrigger ("Jump");
 				rb2d.AddForce (new Vector2 (0f, jumpForce));
 				jump = false;
 			}
+		} 
+		else {
+			if (!particlesCreated) {
+				Instantiate(playerParticle,transform.position,Quaternion.identity);
+				particlesCreated = true;
+				Destroy (gameObject);
+			}
+
+
 		}
 	}
 

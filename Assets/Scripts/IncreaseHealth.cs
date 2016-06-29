@@ -6,6 +6,8 @@ public class IncreaseHealth : MonoBehaviour {
 	private AudioSource source;
 	public AudioClip clip;
 
+	public GameObject healthParticle;
+
 	void Awake() {
 		source = GetComponent<AudioSource> ();
 	}
@@ -24,6 +26,7 @@ public class IncreaseHealth : MonoBehaviour {
 		if(gameObject.CompareTag("Player") && other.gameObject.CompareTag("Heart")) {
 			if (ShowPlayerHealth.hp < 100) {
 				increaseHealth ();
+				Instantiate(healthParticle,transform.position,Quaternion.identity);
 				Destroy (other.gameObject);
 			} else
 				Debug.Log ("HP full!");

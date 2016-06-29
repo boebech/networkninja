@@ -5,7 +5,7 @@ public class ReduceHealth : MonoBehaviour {
 
 	[SerializeField] private int health = 100; 
 	public AudioClip playerHitSound;
-
+	public GameObject healthParticle;
 
 	// Use this for initialization
 	void Start () {
@@ -15,8 +15,14 @@ public class ReduceHealth : MonoBehaviour {
 	void Update () {
 		if (health <= 0) {
 			if (gameObject.CompareTag ("Player")) {
-				if(ShowPlayerHealth.hp <= 0) DeathTrigger.alive = false;
-			} else Destroy (gameObject);
+				if (ShowPlayerHealth.hp <= 0)
+					DeathTrigger.alive = false;
+			} else {
+				Instantiate(healthParticle,transform.position,Quaternion.identity);
+				Destroy (gameObject);
+			} 
+
+				
 		}
 	}
 
