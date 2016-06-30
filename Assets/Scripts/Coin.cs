@@ -16,7 +16,8 @@ public class Coin : MonoBehaviour {
 		if (other.gameObject.CompareTag ("Player")) {
 			Instantiate(pickupPrefab,transform.position,Quaternion.identity);
 			CoinCount.coinCount ++;
-			AudioSource.PlayClipAtPoint(coinSound, transform.position); //source.clip = coinSound; source.Play(); not working?!
+			AudioSource.PlayClipAtPoint(coinSound, Camera.main.transform.position, 0.25f); 
+
 			Destroy (gameObject);
 		}
 	}

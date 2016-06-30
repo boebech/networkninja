@@ -30,7 +30,7 @@ public class Gun : MonoBehaviour
 			if (Input.GetButtonDown ("Fire1")) {
 				// ... set the animator Shoot trigger parameter and play the audioclip.
 				//anim.SetTrigger ("Shoot");
-				AudioSource.PlayClipAtPoint (gunshot, transform.position); 
+				AudioSource.PlayClipAtPoint (gunshot, Camera.main.transform.position, 0.25f); 
 
 
 				// If the player is facing right...
@@ -59,7 +59,6 @@ public class Gun : MonoBehaviour
 				// set the animator Shoot trigger parameter and play the audioclip.
 				//anim.SetTrigger ("Shoot");
 				AudioSource.PlayClipAtPoint (gunshot, transform.position); 
-
 
 				Vector3 rocketLaunch = transform.position + new Vector3 (0, 1, 0);
 
