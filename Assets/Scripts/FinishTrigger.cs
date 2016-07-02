@@ -23,6 +23,10 @@ public class FinishTrigger : MonoBehaviour {
 				break;
 			case "scene2":
 				setLevelPrefs (3);
+				SceneManager.LoadScene ("scene3");
+				break;
+			case "scene3":
+				//setLevelPrefs (4);
 				finish = true;
 				break;
 			default:

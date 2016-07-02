@@ -74,7 +74,6 @@ public class GameState : MonoBehaviour {
 
 		gameStarted = true;
 
-		gameStateText.color = Color.clear;
 
 //		playerMovement.enabled = true;
 
@@ -119,7 +118,10 @@ public class GameState : MonoBehaviour {
 
 	public void PrintGameStateText(string endText) {
 		gameStateText.text = endText;
-		gameStateText.color = Color.white;
+		if(SceneManager.GetActiveScene().name.Equals("scene2")) {
+			gameStateText.color = Color.white;
+		} else
+			gameStateText.color = Color.black;
 	}
 		
 

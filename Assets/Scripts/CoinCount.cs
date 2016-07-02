@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CoinCount : MonoBehaviour {
 
@@ -9,7 +10,10 @@ public class CoinCount : MonoBehaviour {
 
 
 	void Start() {
-		countText.color = Color.black;
+		if(SceneManager.GetActiveScene().name.Equals("scene2")) {
+			countText.color = Color.white;
+		} else
+			countText.color = Color.black;
 		//coinCount = 0; //reset coincount with each new start of a level
 	}
 

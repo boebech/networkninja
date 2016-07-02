@@ -28,9 +28,11 @@ public class ReduceHealth : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other) {
 		if (gameObject.CompareTag ("Player") && other.gameObject.CompareTag ("Bullet_Enemy")) {
+			//Debug.Log ("Player Health reduced triggered");
 			reduceHealth ();
 			Destroy (other.gameObject);
 		} else if (gameObject.CompareTag ("Enemy") && other.gameObject.CompareTag ("Bullet")) {
+			Debug.Log ("Enemy Health reduced triggered");
 			reduceHealth ();
 			Destroy (other.gameObject);
 		} else if (gameObject.CompareTag ("Wall") && other.gameObject.CompareTag ("Bullet")) {
@@ -64,10 +66,10 @@ public class ReduceHealth : MonoBehaviour {
 		health -= 20;
 		ShowPlayerHealth.hp -= 20;
 		AudioSource.PlayClipAtPoint(playerHitSound, transform.position);
-		//Debug.Log ("Health reduced: " + ShowPlayerHealth.hp);
 	}
 
 	private void reduceOtherHealth() {
 		health -= 20;
+		Debug.Log ("Health reduced: " + health);
 	}
 }
