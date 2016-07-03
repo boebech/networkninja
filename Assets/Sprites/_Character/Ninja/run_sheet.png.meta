@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: db55c930090710244abfbc5706b145a0
-timeCreated: 1467555331
+guid: 8cbd259cab506374680e77e1394c4d57
+timeCreated: 1467555791
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -14,12 +14,6 @@ TextureImporter:
     21300014: run_sheet_7
     21300016: run_sheet_8
     21300018: run_sheet_9
-    21300020: run_sheet_10
-    21300022: run_sheet_11
-    21300024: run_sheet_12
-    21300026: run_sheet_13
-    21300028: run_sheet_14
-    21300030: run_sheet_15
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -231,72 +225,6 @@ TextureImporter:
     - name: run_sheet_4
       rect:
         serializedVersion: 2
-        x: 1500
-        y: 1373
-        width: 24
-        height: 21
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-    - name: run_sheet_5
-      rect:
-        serializedVersion: 2
-        x: 1540
-        y: 1371
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-    - name: run_sheet_6
-      rect:
-        serializedVersion: 2
-        x: 1580
-        y: 1372
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-    - name: run_sheet_7
-      rect:
-        serializedVersion: 2
-        x: 1622
-        y: 1372
-        width: 20
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-    - name: run_sheet_8
-      rect:
-        serializedVersion: 2
-        x: 1660
-        y: 1372
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-    - name: run_sheet_9
-      rect:
-        serializedVersion: 2
-        x: 1500
-        y: 1334
-        width: 24
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-    - name: run_sheet_10
-      rect:
-        serializedVersion: 2
         x: 5
         y: 503
         width: 351
@@ -335,7 +263,7 @@ TextureImporter:
         - {x: 162.5, y: -162}
         - {x: 111.5, y: -134}
         - {x: 75.5, y: -96}
-    - name: run_sheet_11
+    - name: run_sheet_5
       rect:
         serializedVersion: 2
         x: 386
@@ -377,7 +305,7 @@ TextureImporter:
         - {x: 85, y: -187.5}
         - {x: 58, y: -151.5}
         - {x: 44, y: -74.5}
-    - name: run_sheet_12
+    - name: run_sheet_6
       rect:
         serializedVersion: 2
         x: 785
@@ -419,7 +347,7 @@ TextureImporter:
         - {x: 39, y: -184.5}
         - {x: 27, y: -103.5}
         - {x: 52, y: -12.5}
-    - name: run_sheet_13
+    - name: run_sheet_7
       rect:
         serializedVersion: 2
         x: 1153
@@ -456,7 +384,7 @@ TextureImporter:
         - {x: -19, y: -175.5}
         - {x: 10, y: -189.5}
         - {x: 111, y: -175.5}
-    - name: run_sheet_14
+    - name: run_sheet_8
       rect:
         serializedVersion: 2
         x: 35
@@ -497,7 +425,7 @@ TextureImporter:
         - {x: -65, y: -171.5}
         - {x: -21, y: -155.5}
         - {x: 5, y: -201.5}
-    - name: run_sheet_15
+    - name: run_sheet_9
       rect:
         serializedVersion: 2
         x: 412
