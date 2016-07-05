@@ -4,6 +4,7 @@ using System.Collections;
 public class ChangeMusic : MonoBehaviour {
 
 	private AudioSource source;
+	public AudioClip menuMusic;
 	public AudioClip level1Music;
 	public AudioClip level2Music;
 	public static bool wasRunningBefore = false;
@@ -22,6 +23,12 @@ public class ChangeMusic : MonoBehaviour {
 	}
 
 	void OnLevelWasLoaded (int level){
+		if(level == 0 /*&& wasRunningBefore==false*/){ //level0 = menu
+			source.clip = menuMusic;
+			source.Play ();
+			AudioManager.isBackgroundMusicPlaying = false;
+			//wasRunningBefore=true;
+		}
 		if(level == 1 /*&& wasRunningBefore==false*/){
 			source.clip = level1Music;
 			source.Play ();
