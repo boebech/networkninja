@@ -28,6 +28,9 @@ public class PlatformController : MonoBehaviour {
 	void Update () {
 		grounded = Physics2D.Linecast (transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
 
+		//if (!grounded)
+		//	anim.SetTrigger ("Jumping");
+
 		if(Input.GetButtonDown("Jump") && grounded) {
 			jump = true;
 		}
