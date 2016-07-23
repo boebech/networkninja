@@ -59,7 +59,8 @@ public class PlatformController : MonoBehaviour {
 
 			if (jump) {
 				//anim.SetTrigger ("Jump");
-				rb2d.AddForce (new Vector2 (0f, jumpForce));
+				Vector2 jumpVector = new Vector2(0f, jumpForce);
+				rb2d.AddForce (jumpVector);
 				jump = false;
 			}
 		} 
