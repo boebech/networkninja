@@ -12,14 +12,14 @@ public class PlatformMove : MonoBehaviour {
 	public float intervall = 6;
 	public bool moveHorizontal;
 
-	// Use this for initialization
+
 	void Start () {
 		platformRigidbody = GetComponent<Rigidbody2D> ();
 		platformPos = platformRigidbody.position;
 		initialPlatformPos = platformRigidbody.position;
 	}
 
-	// Update is called once per frame
+
 
 	void Update () 
 	{

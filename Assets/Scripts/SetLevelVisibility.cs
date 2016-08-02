@@ -18,7 +18,7 @@ public class SetLevelVisibility : MonoBehaviour {
 		if (levelText.text.Equals("Level 3")) {
 			if (highestLevelAchieved < 3) 
 				levelText.text = " ";
-		} //usw...
+		} 
 			
 	}
 		

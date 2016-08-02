@@ -12,12 +12,11 @@ public class ShowPlayerHealth : MonoBehaviour {
 	public Sprite health_0;
 	public static int hp = 100;
 
-	// Use this for initialization
 	void Start () {
 		hp = 100;
 	}
 	
-	// Update is called once per frame
+
 	void Update () {
 		switch (hp) {
 		case 100: this.transform.GetComponent<UnityEngine.UI.Image> ().sprite = health_100;

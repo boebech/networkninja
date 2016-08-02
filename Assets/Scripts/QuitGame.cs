@@ -12,6 +12,9 @@ public class QuitGame : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(Input.GetKey("escape")) {
+
+			Cursor.visible = true;
+
 			switch(SceneManager.GetActiveScene().name) {
 			case "menuScene":
 				Debug.Log ("Quit");

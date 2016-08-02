@@ -12,7 +12,7 @@ public class GameTimer : MonoBehaviour {
 	public Text timerText;
 	private float timerDuration = 100f;
 
-	// Use this for initialization
+
 	void Start () {
 		if(SceneManager.GetActiveScene().name.Equals("scene2")) {
 			timerText.color = Color.white;
@@ -26,7 +26,7 @@ public class GameTimer : MonoBehaviour {
 		timeStarted = true;
 	}
 
-	// Update is called once per frame
+
 	void Update () {
 		if (timeStarted) {
 			if (timerMode == 0)

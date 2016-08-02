@@ -18,13 +18,13 @@ public class PlatformController : MonoBehaviour {
 	public GameObject playerParticle;
 	private bool particlesCreated = false;
 
-	// Use this for initialization
+
 	void Awake () {
 		anim = GetComponent<Animator> ();
 		rb2d = GetComponent<Rigidbody2D>();
 	}
 	
-	// Update is called once per frame
+
 	void Update () {
 		grounded = Physics2D.Linecast (transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
 
@@ -39,9 +39,7 @@ public class PlatformController : MonoBehaviour {
 	}
 
 	void FixedUpdate() {
-		if (DeathTrigger.alive) { // freeze player when dead (TODO:optimize)
-			//BackgroundScroller bgs = GetComponent<BackgroundScroller> ();
-			//bgs.moveScreen ();
+		if (DeathTrigger.alive) { 
 			float h = Input.GetAxis ("Horizontal");
 
 			anim.SetFloat ("Speed", Mathf.Abs (h));
@@ -58,7 +56,7 @@ public class PlatformController : MonoBehaviour {
 				Flip ();
 
 			if (jump) {
-				//anim.SetTrigger ("Jump");
+
 				Vector2 jumpVector = new Vector2(0f, jumpForce);
 				rb2d.AddForce (jumpVector);
 				jump = false;

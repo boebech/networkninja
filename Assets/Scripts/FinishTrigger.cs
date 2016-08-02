@@ -8,7 +8,7 @@ public class FinishTrigger : MonoBehaviour {
 	public static bool finish;
 	[SerializeField] private Text gameStateText;
 
-	// Use this for initialization
+
 	void Start () {
 		finish = false;
 	}
@@ -36,7 +36,7 @@ public class FinishTrigger : MonoBehaviour {
 
 	}
 
-	//save the highest level the player achieved (e.g. for display in the start menu)
+	//das höchste jemals vom Spieler erreichte Level wird gespeichert, sodass es beim Menü angezeigt werden kann
 	void setLevelPrefs(int recentlyFinishedLevel) {
 		int highestLevelAchieved = PlayerPrefs.GetInt("LevelAchieved", 0);
 		if (recentlyFinishedLevel > highestLevelAchieved)

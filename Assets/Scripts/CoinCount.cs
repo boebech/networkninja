@@ -10,14 +10,17 @@ public class CoinCount : MonoBehaviour {
 
 
 	void Start() {
+
+		//Aufgrund der unterschiedlichen Hintergrundfarben (weiß und schwarz) muss die Textfarbe sich an die Level anpassen
 		if(SceneManager.GetActiveScene().name.Equals("scene2")) {
 			countText.color = Color.white;
 		} else
 			countText.color = Color.black;
-		//coinCount = 0; //reset coincount with each new start of a level
 	}
 
 	void Update() {
+
+		//Workaround, da die ToString Methode nicht funktioniert
 		countText.text = "" + coinCount;
 	}
 

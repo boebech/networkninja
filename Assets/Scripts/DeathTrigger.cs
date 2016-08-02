@@ -12,18 +12,20 @@ public class DeathTrigger : MonoBehaviour {
 	[SerializeField]
 	private GameObject playerParticle;
 
-	// Use this for initialization
+
 	void Start () {
 		alive = true;
 	}
 
 	void Update() {
-		//if timerMode is Countdown and 0 is reached the player is killed manually and the game is ended
+
+		//In jedem Frame wird kontrolliert, ob der Countdown abgelaufen ist
 		if (GameTimer.getTimerMode() == 1 && GameTimer.getTimer() == 0) {
 			killPlayer ();
 		}
 	}
 
+	//Diese Funktion tötet den Spieler in Leveln, in denen man Fallen kann
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.CompareTag ("Player")) {
 			killPlayer ();
@@ -32,6 +34,7 @@ public class DeathTrigger : MonoBehaviour {
 		}
 	}
 
+	//Diese Funktion tötet den Spieler, wenn er mit anderen Objekten/Gegnern in Berührung kommt
 	void OnCollisionEnter2D(Collision2D other) {
 		if (other.gameObject.CompareTag ("Player")) {
 			killPlayer ();

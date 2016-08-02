@@ -9,38 +9,11 @@ public class GameState : MonoBehaviour {
 	public bool gameStarted = false;
 	[SerializeField]
 	private Text gameStateText;
-//	[SerializeField]
-//	private GameObject player;
-//	[SerializeField]
-//	private BirdMovement birdMovement;
-//	[SerializeField]
-//	private FollowCamera followCamera;
 	private float restartDelay = 3f;
 	private float restartTimer;
-//	private PlayerMovement playerMovement;
-//	private PlayerHealth playerHealth;
 	private int i = 0; // count value to ensure that EndGame() is called only once
 
-	// Use this for initialization
-	void Start () {
-
-
-//		playerMovement = player.GetComponent<PlayerMovement> ();
-//		playerHealth = player.GetComponent<PlayerHealth> ();
-
-		// Prevent the player from moving at the start of the game
-//		playerMovement.enabled = false;
-
-		// Prevent the bird from moving at the start of the game
-//		birdMovement.enabled = false;
-
-		// Prevent the camera from moving at the start of the game
-//		followCamera.enabled = false;
-	}
-
-	// Update is called once per frame
 	void Update () {
-
 
 		if(gameStarted == false && Input.GetKeyUp(KeyCode.Space)){
 			StartGame();
@@ -68,18 +41,8 @@ public class GameState : MonoBehaviour {
 
 	private void StartGame(){
 
-
-
-		//Cursor.visible = false;
-
 		gameStarted = true;
-
-
-//		playerMovement.enabled = true;
-
-//		birdMovement.enabled = true;
-
-//		followCamera.enabled = true;
+		Cursor.visible = false;
 
 
 	}
@@ -100,7 +63,7 @@ public class GameState : MonoBehaviour {
 			endText = endText + "\nNew Highscore: " + CoinCount.coinCount;
 			ScoreManager.saveHighScore (CoinCount.coinCount);
 		}
-		CoinCount.coinCount = 0; // reset counter (either after player died or finshed the game)
+		CoinCount.coinCount = 0; // Coin Zähler zurücksetzen, entweder wenn der Spieler stirbt oder das Spiel beendet
 
 		//end currently playing track since it will overlap with the menu-music 
 		GameObject[] destroyable = GameObject.FindGameObjectsWithTag ("destroyable");
@@ -110,9 +73,6 @@ public class GameState : MonoBehaviour {
 
 		PrintGameStateText (endText);
 
-		//Time.timeScale = 0.0f; //freeze entire game (including update functions)
-
-//		player.SetActive (false);
 	}
 
 

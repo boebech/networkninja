@@ -7,7 +7,6 @@ public class PlatformFall : MonoBehaviour {
 
 	private Rigidbody2D rb2d;
 
-	// Use this for initialization
 	void Awake () {
 		rb2d = GetComponent<Rigidbody2D> ();
 	}

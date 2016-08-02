@@ -15,7 +15,6 @@ public class SpawnPlatformManager : MonoBehaviour {
 	private Vector2 lastBeforeLastPosition;
 
 
-	// Use this for initialization
 	void Start () {
 		originPosition = transform.position;
 		Spawn ();
